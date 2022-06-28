@@ -1,2 +1,2 @@
 discord.py[voice]>=1.7.3
-redis==3.3.11
+redis==4.3.4
