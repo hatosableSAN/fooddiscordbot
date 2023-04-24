@@ -454,7 +454,7 @@ async def rollm3(ctx):
        [5,6,7,8,9,11,12],[16,21,31,34,35],[1,5,8,12,15,17,23,24,25,28],[14,15,16,19,21,23,24,27,31,33],[6,10,11,15,16],[1,2,6,7,8,9,13,14,21,22]]
    islandsize=len(island)
    islandpos=random.randint(1,islandsize)#島決定
-   boothsize=thisalbum[islandpos-1]
+   boothsize=booth[islandpos-1]
    boothnum=random.randint(1,boothsize)#番号決定
    if boothnum<10:
        boothstr="0"+str(boothnum)
