@@ -440,21 +440,40 @@ async def showwordtable2(ctx):
          
 
 @bot.command()
-async def GdbGSelect(ctx):
-   URLCommonStr="https://gdbg.tv/release/"
-   year=random.randint(2009,2021)#2009~2021
-   albumnum=year-2009
-   albumlist=[[7,7,6,6,6],[17,17,5],[12,12,11],[12,12,13],[12,12,12],[10,9,9,10],[10,10,10,11],[10,10,10,10],[20,20],[6,5,5,6,5,5,5,5],[10,9,10,10,10],[12,12,12,12],[12,12,12,12]]
-   thisalbum=albumlist[albumnum]
-   albumsize=len(thisalbum)
-   discpos=random.randint(1,albumsize)#ディスクきめ
-   disc=thisalbum[discpos-1]
-   track=random.randint(1,disc)
+async def rollm3(ctx):
+   island=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q",\
+           "あ","い","う","え","お","カ","キ","ク","ケ","コ","サ"]
+   booth=[24,24,24,24,24,24,24,24,24,24,24,24,24,5,20,9,30,16,36,40,40,20,12,36,36,38,38]
+       
+   ab=[[5,7,11,15,17,18,20],[3,12,14,16,20,23],[8,13,19],[12,23],[3,13],\
+       [3,4,6,11],[2,8,16,19,20],[3,4,5,6,15,21,22],[2,9,11,15,17,21,23],[1,3,8,11,13,14,17,19],\
+       [2,4,5,6,7,8,9,10,11,12,13,17,19,21],[3,5,9,10,17,20],[1,6,7,9,12,16,21,24],[1,2,3,4],\
+       [1,3,5,8,11,14,15,18,19,20],[1,2,3,4,5,6,9],[1,2,3,6,7,10,15,17,18,19,23,25,26,29],\
+       [1,2,4,5,6,7,9,10,14,15],[2,3,4,5,8,9,10,11,12,13,15,16,18,20,21,23,24,25,26,27,28,31,32,34,35],\
+       [1,3,4,7,13,16,17,19,21,25,26,27,32,34,39],[9,10,14,16,17,23,26,27,29,32,35,37,38,40],[1,2,3,4,5,7,8,9,10,13,14,19],\
+       [5,6,7,8,9,11,12],[16,21,31,34,35],[1,5,8,12,15,17,23,24,25,28],[14,15,16,19,21,23,24,27,31,33],[6,10,11,15,16],[1,2,6,7,8,9,13,14,21,22]]
+   albumsize=len(island)
+   islandpos=random.randint(1,island)#島決定
+   boothsize=thisalbum[islandpos-1]
+   boothnum=random.randint(1,boothsize)#番号決定
+   if boothnum<10:
+       boothstr="0"+str(boothnum)
+   else:
+       boothstr=str(boothnum)
+   
+   
+   if boothnum in ab[islandpos-1]:
+       String=island[islandpos-1]+"-"+boothstr+"ab"
+   else:
+       abdice=random.randint(1,2)
+       if abdice==1:
+          String=island[islandpos-1]+"-"+boothstr+"a"
+       else:
+          String=island[islandpos-1]+"-"+boothstr+"b"
 
-   String=URLCommonStr+str(year)+"-"+str(discpos)+"-"+str(track)
-
-
-   await ctx.send("今回のおすすめはこちら\n"+String)
+          
+   await ctx.send("結果は…\n"+String) 
+          
 
 @bot.command()
 async def Play(ctx):
