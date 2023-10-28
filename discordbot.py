@@ -441,7 +441,7 @@ async def showwordtable2(ctx):
 
 @bot.command()
 async def rollm3(ctx):
-   island=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R",\"S",\"T",\
+   island=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T",\
            "あ","い","う","え","お","カ","キ","ク","ケ","コ","サ"]
    booth=[18,24,24,24,24,\
           24,24,24,24,24,\
