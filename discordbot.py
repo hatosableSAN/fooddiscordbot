@@ -497,7 +497,7 @@ async def nabe(ctx,n):
        conn = db.connect() # このconnを通じて操作する
        listlen=conn.llen("nabelist")#長さゲット
        result=random.randint(1,listlen)-1
-       for (x in range(int(n)):
+       for x in range(int(n):
         guzai = conn.lindex("nabelist", result)
         guzailist.append(guzai)
 
