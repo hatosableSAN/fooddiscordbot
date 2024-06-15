@@ -503,7 +503,7 @@ async def nabe(ctx,n):
 
 
        
-       embed = discord.Embed(
+      embed = discord.Embed(
       description="今回のお鍋("+n+"種入り)"
       )
       embed.add_field(name="具材",value=guzailist)
