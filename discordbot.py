@@ -19,16 +19,10 @@ ndm=""
 #     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
 #     await ctx.send(error_msg)
 
-# @bot.command()
-# async def hoge(ctx,name):
-#  conn = db.connect() # このconnを通じて操作する
-#  if conn.exists('リスト')==0:#リストがない場合
-#   conn.set('リスト', name)
-#  else:
-#   str=conn.get('リスト')
-#   str=str+name
-#   conn.set('リスト', str)
-#  await ctx.send(name+"を加えました〜")
+@bot.command()
+async def hoge(ctx):
+ 
+ await ctx.send("ほげ～")
 
 # @bot.command()
 # async def fuga(ctx,name):
@@ -248,10 +242,6 @@ async def roll(ctx,ndm):
      
     
    
-    embed.set_author(name=ctx.author.name, # Botのユーザー名
-     url="https://repo.exapmle.com/bot", # titleのurlのようにnameをリンクにできる。botのWebサイトとかGithubとか
-     icon_url=ctx.author.avatar_url # Botのアイコンを設定してみる
-     )
     await ctx.send(embed=embed)
 
 
