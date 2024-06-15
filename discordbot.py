@@ -79,13 +79,6 @@ async def kungfu(ctx):
        )
        embed.add_field(name="漢字一覧",value=resultstr)
 
-         
-        
-       
-       embed.set_author(name=ctx.author.name, # Botのユーザー名
-        url="https://repo.exapmle.com/bot", # titleのurlのようにnameをリンクにできる。botのWebサイトとかGithubとか
-        icon_url=ctx.author.avatar_url # Botのアイコンを設定してみる
-        )
        await ctx.send(embed=embed)
 
 @bot.command()
@@ -498,8 +491,24 @@ async def Play(ctx):
 
    await ctx.send("今回のおすすめはこちら\n"+String)
 
+@bot.command()
+async def nabe(ctx,n):
+       guzailist=[]
+       conn = db.connect() # このconnを通じて操作する
+       listlen=conn.llen("nabelist")#長さゲット
+       result=random.randint(1,listlen)-1
+       for (x in range(int(n)):
+        guzai = conn.lindex("nabelist", result)
+        guzailist.append(guzai)
 
 
+       
+       embed = discord.Embed(
+      description="今回のお鍋("+n+"種入り)"
+      )
+      embed.add_field(name="具材",value=guzailist)
+
+      await ctx.send(embed=embed)
 
 
 
