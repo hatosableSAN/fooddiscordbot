@@ -501,6 +501,28 @@ async def nabe(ctx,n):
 
        await ctx.send(embed=embed)
 
+@bot.command()
+async def showwordtable(ctx):
+      conn = db.connect() # このconnを通じて操作する
+      listall=conn.lrange("wordgame_TableA", 0, conn.llen("nabelist"))
+      listA=listall[:100]#1d
+      listB=listall[101:200]#100
+
+
+
+      embed = discord.Embed(
+      description="現在の具材(全"+len(listall)+"種)"
+      )
+      embed.add_field(name="一覧(1/2)",value=listA)
+
+      embed2 = discord.Embed(
+      description="現在の具材(全"+len(listall)+"種)"
+      )
+      embed2.add_field(name="一覧(2/2)",value=listB)
+       
+      
+      await ctx.send(embed=embed)
+      await ctx.send(embed=embed2)
 
 
 
