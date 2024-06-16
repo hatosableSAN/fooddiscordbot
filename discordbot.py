@@ -509,14 +509,14 @@ async def nabeview(ctx):
       listB=listall[101:200]#100
 
 
-
+      n = len(listall)
       embed = discord.Embed(
-      description="現在の具材(全"+len(listall)+"種)"
+      description="現在の具材(全"+str(n)+"種)"
       )
       embed.add_field(name="一覧(1/2)",value=listA)
 
       embed2 = discord.Embed(
-      description="現在の具材(全"+len(listall)+"種)"
+      description="現在の具材(全"+str(n)+"種)"
       )
       embed2.add_field(name="一覧(2/2)",value=listB)
        
