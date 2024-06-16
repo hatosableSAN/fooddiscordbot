@@ -502,7 +502,7 @@ async def nabe(ctx,n):
        await ctx.send(embed=embed)
 
 @bot.command()
-async def showwordtable(ctx):
+async def nabeview(ctx):
       conn = db.connect() # このconnを通じて操作する
       listall=conn.lrange("wordgame_TableA", 0, conn.llen("nabelist"))
       listA=listall[:100]#1d
