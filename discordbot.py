@@ -504,7 +504,7 @@ async def nabe(ctx,n):
 @bot.command()
 async def nabeview(ctx):
       conn = db.connect() # このconnを通じて操作する
-      listall=conn.lrange("wordgame_TableA", 0, conn.llen("nabelist"))
+      listall=conn.lrange("nabelist", 0, conn.llen("nabelist"))
       listA=listall[:100]#1d
       listB=listall[101:200]#100
 
